@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Welfare Schemes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #ff6f00;
+            --light-bg: #f5f5f5;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .welcome-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: var(--light-bg);
+        }
+
+        .welcome-section h1 {
+            margin-bottom: 1rem;
+        }
+
+        .welcome-section p {
+            margin-bottom: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .schemes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .scheme-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .scheme-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .page {
+            display: none;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .scheme-details {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .eligibility-list {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Tamil Nadu Integrated Welfare Portal</h1>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('schemes')">Schemes</a></li>
+            <li><a onclick="showPage('resources')">Resources</a></li>
+            <li><a onclick="showPage('faq')">FAQ</a></li>
+            <li><a onclick="showPage('contact')">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="welcome-section">
+            <h1>Welcome to Tamil Nadu Integrated Welfare Portal</h1>
+            <p>This portal serves as a one-stop digital gateway to access all government welfare schemes in Tamil Nadu. 
+            Our mission is to ensure that every eligible citizen can easily access, apply for, and benefit from the various 
+            welfare programs being implemented by the Tamil Nadu government.</p>
+            
+            <p>The welfare schemes featured on this portal are designed to uplift vulnerable communities, 
+            support economic development, and promote social equity across all districts of Tamil Nadu. 
+            Through this integrated platform, you can learn about eligibility criteria,  
+            and connect directly with government officials for assistance.</p>
+            
+            <button class="button" onclick="showPage('schemes')">Explore Schemes</button>
+        </div>
+
+        <div class="schemes-grid">
+            <div class="scheme-card">
+                <h3>Social Welfare Schemes</h3>
+                <p>Supporting vulnerable sections of society through targeted assistance programs including pension schemes, 
+                educational support, and healthcare benefits. These initiatives ensure social security for the elderly, 
+                disabled, widows, and other vulnerable groups.</p>
+                <a href="https://www.tnsocialwelfare.tn.gov.in/en/specilisationsspecial-programme-section/free-supply-of-sewing-machine-scheme" class="button" target="_blank">Visit Official Portal</a>
+            </div>
+
+            <div class="scheme-card">
+                <h3>Marriage Assistance Scheme</h3>
+                <p>Financial assistance and gold for marriage of young women from economically weaker sections, 
+                including special provisions for graduates. This scheme has helped thousands of families cover 
+                marriage expenses while promoting higher education among girls.</p>
+                <a href="https://tnsocialwelfare.tn.gov.in/en/specilisationswoman-welfare/marriage-assistance-schemes" class="button" target="_blank">Visit Official Portal</a>
+            </div>
+
+            <div class="scheme-card">
+                <h3>Farmers Welfare Scheme</h3>
+                <p>Comprehensive support for farmers including crop insurance, equipment subsidies, and drought relief assistance. 
+                These programs are vital for agricultural sustainability and food security in Tamil Nadu, benefiting over 
+                1.5 million farming families.</p>
+                <a href="https://www.tnagrisnet.tn.gov.in/" class="button" target="_blank">Visit Official Portal</a>
+            </div>
+
+            <div class="scheme-card">
+                <h3>Youth Entrepreneurship Program</h3>
+                <p>Supporting young entrepreneurs through financial assistance, training, and mentorship for starting small businesses. 
+                This flagship program has successfully created over 20,000 new businesses since its inception and continues to 
+                drive economic growth across the state.</p>
+                <a href="https://krishnagiri.nic.in/scheme/new-entrepreneur-cum-enterprise-development-scheme/" class="button" target="_blank">Visit Official Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schemes Page -->
+    <div id="schemes" class="page">
+        <h2>Available Schemes</h2>
+        <div id="scheme-details" class="scheme-details">
+            <!-- Scheme details will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Resources Page (replacing Apply Online) -->
+    <div id="resources" class="page">
+        <h2>Helpful Resources</h2>
+        <div class="scheme-details">
+            <h3>Important Documents</h3>
+            <ul class="eligibility-list">
+                <li>Income Certificate Guidelines</li>
+                <li>Aadhaar Enrollment Centers</li>
+                <li>Community Certificate Procedure</li>
+                <li>Land Documents Guide</li>
+            </ul>
+            <h3>How to Apply</h3>
+            <p>For all schemes, applications can be submitted through the respective department's official portal. 
+            You can also visit your nearest e-Seva center or Common Service Center for assistance with the application process.</p>
+        </div>
+    </div>
+
+    <!-- FAQ Page (replacing Application Status) -->
+    <div id="faq" class="page">
+        <h2>Frequently Asked Questions</h2>
+        <div class="scheme-details">
+            <h3>General Questions</h3>
+            <div class="form-group">
+                <p><strong>Q: How do I check my application status?</strong></p>
+                <p>A: Visit the official portal of the respective scheme and use your application ID to track the status.</p>
+            </div>
+            <div class="form-group">
+                <p><strong>Q: What documents are typically required?</strong></p>
+                <p>A: Common requirements include Aadhaar card, income certificate, residence proof, and scheme-specific documents.</p>
+            </div>
+            <div class="form-group">
+                <p><strong>Q: How long does the application process take?</strong></p>
+                <p>A: Processing times vary by scheme, but most applications are processed within 30-45 days.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <h2>Contact Us</h2>
+        <div class="scheme-details">
+            <h3>Get in Touch</h3>
+            <p>Email: info@tnwelfare.gov.in</p>
+            <p>Toll-free Helpline: 1800-XXX-XXXX</p>
+            <p>Address: Department of Social Welfare, Chennai, Tamil Nadu</p>
+            <p>For scheme-specific queries, please visit the official portal of the respective department.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Government of Tamil Nadu</p>
+        <p> DURGA SREE PRIYA P 21MIS1177</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function showSchemeDetails(schemeId) {
+            showPage('schemes');
+            const detailsDiv = document.getElementById('scheme-details');
+            
+            const schemeData = {
+                'social': {
+                    title: 'Social Welfare Schemes',
+                    description: 'Comprehensive support for vulnerable sections of society.',
+                    benefits: [
+                        'Monthly pension for elderly (Rs. 1,000)',
+                        'Healthcare assistance up to Rs. 5,00,000',
+                        'Educational support for children',
+                        'Disability assistance and aid devices'
+                    ],
+                    eligibility: [
+                        'Tamil Nadu residents',
+                        'Below Poverty Line (BPL) category',
+                        'Valid Aadhaar card',
+                        'Income certificate from revenue department'
+                    ],
+                    portalLink: 'https://www.tnsocialwelfare.tn.gov.in/en/specilisationsspecial-programme-section/free-supply-of-sewing-machine-scheme'
+                },
+                'marriage': {
+                    title: 'Marriage Assistance Scheme',
+                    description: 'Financial support for marriages in economically weaker sections.',
+                    benefits: [
+                        'Financial assistance of Rs. 50,000',
+                        '8 grams of gold for mangalsutra',
+                        'Additional Rs. 25,000 for graduate brides',
+                        'Special provisions for orphaned girls'
+                    ],
+                    eligibility: [
+                        'Minimum age: 18 years for bride',
+                        'Family annual income below Rs. 72,000',
+                        'First marriage only',
+                        'Application before marriage'
+                    ],
+                    portalLink: 'https://tnsocialwelfare.tn.gov.in/en/specilisationswoman-welfare/marriage-assistance-schemes'
+                },
+                'farmers': {
+                    title: 'Farmers Welfare Scheme',
+                    description: 'Comprehensive support for agricultural development.',
+                    benefits: [
+                        'Crop insurance coverage',
+                        'Farm equipment subsidy up to 50%',
+                        'Interest-free loans up to Rs. 1,00,000',
+                        'Drought relief compensation'
+                    ],
+                    eligibility: [
+                        'Active farmers with land records',
+                        'Tamil Nadu resident',
+                        'Updated land patta documents',
+                        'No existing agricultural loans'
+                    ],
+                    portalLink: 'https://www.tnagrisnet.tn.gov.in/'
+                },
+                'entrepreneurship': {
+                    title: 'Youth Entrepreneurship Program',
+                    description: 'Support for young entrepreneurs starting businesses.',
+                    benefits: [
+                        'Startup grant up to Rs. 3,00,000',
+                        'Business skill development training',
+                        'Marketing support and guidance',
+                        'Interest subsidy on bank loans'
+                    ],
+                    eligibility: [
+                        'Age: 18-35 years',
+                        'Minimum 10th standard education',
+                        'Valid business proposal',
+                        'Tamil Nadu domicile'
+                    ],
+                    portalLink: 'https://krishnagiri.nic.in/scheme/new-entrepreneur-cum-enterprise-development-scheme/'
+                }
+            };
+
+            const scheme = schemeData[schemeId];
+            if (scheme) {
+                detailsDiv.innerHTML = `
+                    <h3>${scheme.title}</h3>
+                    <p>${scheme.description}</p>
+                    <div class="benefits-grid">
+                        <div>
+                            <h4>Benefits Include:</h4>
+                            <ul class="eligibility-list">
+                                ${scheme.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Eligibility Criteria:</h4>
+                            <ul class="eligibility-list">
+                                ${scheme.eligibility.map(criteria => `<li>${criteria}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="${scheme.portalLink}" class="button" target="_blank">Visit Official Portal to Apply</a>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
